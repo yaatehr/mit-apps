@@ -1,7 +1,7 @@
 import React from 'react';
 import Route from 'react-router/lib/Route';
 import IndexRoute from 'react-router/lib/IndexRoute';
-import App from '../components/App';
+import App from '../components/AppPage/AppPage.js';
 
 // Webpack 2 supports ES2015 `import()` by auto-
 // chunking assets. Check out the following for more:
@@ -23,7 +23,6 @@ const importTools = (nextState, cb) => {
     });
 };
 
-
 const importAppStore = (nextState, cb) => {
   import(/* webpackChunkName: "tools" */ '../components/AppStore')
     .then(module => cb(null, module.default))
@@ -40,17 +39,15 @@ const importAbout = (nextState, cb) => {
     });
 };
 
-
 // We use `getComponent` to dynamically load routes.
 // https://github.com/reactjs/react-router/blob/master/docs/guides/DynamicRouting.md
 const routes = (
   <Route path="/" component={App}>
     <IndexRoute getComponent={importHome} />
     <Route path="tools" getComponent={importTools} />
-    <Route path="appstore" getComponent={importAppStore}/>
-    <Route path="about" getComponent={importAbout}/>
+    <Route path="appstore" getComponent={importAppStore} />
+    <Route path="about" getComponent={importAbout} />
   </Route>
-
 );
 
 // Unfortunately, HMR breaks when we dynamically resolve
@@ -61,7 +58,6 @@ if (module.hot) {
   require('../components/Tools'); // eslint-disable-line global-require
   // require('../components/About'); // eslint-disable-line global-require
   // require('../components/AppStore'); // eslint-disable-line global-require
-
 }
 
 export default routes;
