@@ -1,13 +1,13 @@
- const App = {
-    name: String,
-    author: Object,
-    type: String,
-    reivews: Object,
-    url: String,
-    rating: Number,
-    img: String,
-    tags: Array
-}
+//  const App = {
+//     name: String,
+//     author: Object,
+//     type: String,
+//     reivews: Object,
+//     url: String,
+//     rating: Number,
+//     img: String,
+//     tags: Array
+// }
 
 // IF WE WNAT TO MAINTAIN PERSISTANT STATE THINGS FOR THIS IN THE DATABASE
 // how can we do that? firebase look into fucntions 

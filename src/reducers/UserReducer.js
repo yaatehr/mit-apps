@@ -1,15 +1,15 @@
 
-// User Reducer
-// @fl
-const User = {
-   _id: String,
-   email: String,
-   kerberos: Object,
-   library: Object,
-   preferences: Object,
+// // User Reducer
+// // @fl
+// const User = {
+//    _id: String,
+//    email: String,
+//    kerberos: Object,
+//    library: Object,
+//    preferences: Object,
    
 
-};
+// };
 
 
 // type checking must happrn in the action creator ie in the inpout 
