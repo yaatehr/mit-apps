@@ -14,8 +14,19 @@
 // gotta attach items to other items (doable with firebase)
 
 
+const testState = {
+    author: "MIT",
+    type: "App",
+    name: 'Stellar',
+    img: 'stellar.png',
+    url: 'https://stellar.mit.edu',
+    rating: 4,
+    tags: ["school", "management", "software", "this sucks"]
+}
 
-export default function appReducer(state = {}, action) {
+
+
+export default function appReducer(state = testState, action) {
     switch (action.type) {
         case 'SET_APP':
             return action.payload.app // APP object is APP state

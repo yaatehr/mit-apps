@@ -30,16 +30,31 @@ const dummyState = {
       img: 'planner.png',
       url: 'https://planner.mit.edu',
     },
+    {
+      name: 'Course Catalogue Searcher (Chrome)',
+      img: 'ccsearcher.png',
+      url: 'https://chrome.google.com/webstore/detail/mit-course-catalog-search/gnakgohnkbkolbefnekinmmkmdfcogfa'
+    },
+    {
+      name: 'Course Picker',
+      img: 'picker.png',
+      url: 'https://picker.mit.edu'
+    },
+    {
+      name: 'Stellar',
+      img: 'stellar.png',
+      url: 'https://stellar.mit.edu'
+    }
   ],
 };
 // eslint won't like the require notation, but this is the only way to serve images dynamically
-function appTile(object) {
+function appTile(object, i) {
   const imageClick = () => {
     window.location.href = object.url;
   };
   return (
-    <div className="app-tile-container">
-      <img src={require(`../${object.img}`)} className="app-tile" onClick={imageClick} alt="loading..." />
+    <div className="app-tile-container" key={i}> 
+      <img src={require(`../public/${object.img}`)} className="app-tile" onClick={imageClick} alt="loading..." />
       <span>
         {object.name}
       </span>
@@ -59,13 +74,13 @@ class Carousel extends React.Component {
     const settings = {
       dots: true,
       infinite: true,
-      slidesToShow: 2,
+      slidesToShow: 3,
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 2000,
       pauseOnHover: true,
       centerMode: false,
-      arrows:true,
+      arrows:true
 
     };
 
@@ -94,7 +109,7 @@ class Carousel extends React.Component {
       <div>
         <h2>Browse Student Apps</h2>
         <Slider {...settings}>
-          {this.state.tiles.map(tile => appTile(tile))}
+          {this.state.tiles.map((tile, index) => appTile(tile, index))}
         </Slider>
       </div>
     );

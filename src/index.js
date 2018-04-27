@@ -9,8 +9,8 @@ import './styles/styles.scss'; // Yep, that's right. You can import SASS/CSS fil
 require('./favicon.ico'); // Tell webpack to load favicon.ico
 
 import ApolloClient from "apollo-boost";
-import { ApolloProvider, Query } from "react-apollo";
-import gql from "graphql-tag";
+import { ApolloProvider } from "react-apollo";
+// import gql from "graphql-tag";
 
 
 // GRAPHQL Setup
@@ -23,9 +23,9 @@ const store = configureStore();
 
 render(
   <AppContainer>
-      <ApolloProvider client={client}>
+    <ApolloProvider client={client}>
 
-    <Root store={store} history={history} />
+      <Root store={store} history={history} />
     </ApolloProvider>
 
   </AppContainer>,
@@ -37,9 +37,9 @@ if (module.hot) {
     const NewRoot = require('./components/Root').default;
     render(
       <AppContainer>
-          <ApolloProvider client={client}>
+        <ApolloProvider client={client}>
 
-        <NewRoot store={store} history={history} />
+          <NewRoot store={store} history={history} />
         </ApolloProvider>
 
       </AppContainer>,
