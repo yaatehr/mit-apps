@@ -3,6 +3,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import * as helperFuncs from '../actions/AppPageActions'
 
 // import AppTile from '../AppPage/AppTile.js';
 // import { connect, Provider, bindActionCreators } from 'react-redux';
@@ -50,7 +51,7 @@ const dummyState = {
 // eslint won't like the require notation, but this is the only way to serve images dynamically
 function appTile(object, i) {
   const imageClick = () => {
-    window.location.href = object.url;
+    helperFuncs(object.url);
   };
   return (
     <div className="app-tile-container" key={i}> 

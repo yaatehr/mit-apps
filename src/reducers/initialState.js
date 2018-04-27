@@ -14,5 +14,9 @@ export default {
       annual: 0,
       threeYear: 0
     }
+  },
+  appStore: {
+    apps: {},
+    lastUpdated: null,
   }
 };
