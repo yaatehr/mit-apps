@@ -1,7 +1,7 @@
 import replace from 'react-router-redux';
 
 export function toAppUrl(url) {
-    return replace(url);
+    return () => replace(url);
 }
 
 

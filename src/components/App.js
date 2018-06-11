@@ -15,24 +15,14 @@ import NavigationBar from './NavigationBar';
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
 // component at the top-level.
-const testApp= {
-  author: "MIT",
-  type: "App",
-  name: 'Stellar',
-  img: 'stellar.png',
-  url: 'https://stellar.mit.edu',
-  rating: 4,
-  tags: ["school", "management", "software", "this sucks"],
-  reviews: []
-}
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <div className="container">
+        {/* <div className="container"> */}
         <NavigationBar/>
-        </div>
+        {/* </div> */}
         <div>
 
         </div>
@@ -41,8 +31,7 @@ class App extends React.Component {
           <Route path="/fuel-savings" component={FuelSavingsPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/app-store" component={AppStorePage} />
-          <Route path="/app-page" 
-                  render={() => <AppPage {...testApp} />} />
+          <Route path="/app-page" component={AppPage} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>

@@ -3,41 +3,91 @@ import Carousel from '../carousel';
 import PropTypes from 'prop-types';
 // import {bindActionCreators} from 'redux';
 import * as helperFuncs from '../../actions/AppPageActions'; // TODO
+import { Media } from 'react-bootstrap';
+import Rating from 'react-rating'
+
 // import { connect } from 'react-redux'
 // TODO Add react redux to stack
+
+const testApp= {
+  author: "MIT",
+  type: "App",
+  name: 'Stellar',
+  img: 'stellar.png',
+  url: 'https://stellar.mit.edu',
+  rating: 4,
+  tags: ["school", "management", "software", "this sucks"],
+  reviews: []
+}
 
 export class AppPage extends React.Component {
   constructor(props, context) {
     super(props, context);
+    // this.state = {
+    //   name: this.props.app.name,
+    //   author: this.props.app.author,
+    //   type:  this.props.app.type,
+    //   reivews: this.props.app.reivews,
+    //   url: this.props.app.url,
+    //   rating: this.props.app.rating,
+    //   img: this.props.app.img,
+    //   tags: this.props.app.tags,
+    //   saving: false,
+    //   isEditing: false
+    // };
     this.state = {
-      name: this.props.app.name,
-      author: this.props.app.author,
-      type:  this.props.app.type,
-      reivews: this.props.app.reivews,
-      url: this.props.app.url,
-      rating: this.props.app.rating,
-      img: this.props.app.img,
-      tags: this.props.app.tags,
+      name: testApp.name,
+      author: testApp.author,
+      type:  testApp.type,
+      reivews: testApp.reivews,
+      url: testApp.url,
+      rating: testApp.rating,
+      img: testApp.img,
+      tags: testApp.tags,
       saving: false,
       isEditing: false
     };
+
+  }
+
+  componentWillMount() {
+    this.setState({app: testApp})
   }
 
   render() {
+    // helperFuncs.toAppUrl("http://www.google.com")
     return (
-      <section>
-        <h1> this.props.name </h1>
-        <h3> this.props.author </h3>
-        <img src={require(`../../public/${this.state.img}`)} className="app-tile" onClick={helperFuncs.toAppUrl()} alt="loading..." />
-        <Carousel />
-      </section>
+      <section className="app-page">
+      <Media>
+      <Media.Left>
+       <img src={require(`../../public/${this.state.img}`)} className="tile" onClick={()=> window.location.replace(this.state.url)} alt="loading..." />
+      </Media.Left>
+      <Media.Body>
+        <Media.Heading>{this.state.name}</Media.Heading>
+        <p>
+          An app by {this.state.author}
+        </p>
+        <Rating
+  emptySymbol={<img src="../../public/star-empty.png" className="icon" />}
+  fullSymbol={<img src="../../public/star-full.png" className="icon" />}
+  onChange={(value) => console.log(value)}
+/>
+      </Media.Body>
+    </Media>
+
+    </section>
+      // <section className="app-page">
+      //   <h1 className="header"> {this.state.name} </h1>
+      //   <h3 className="author"> {this.state.author} </h3>
+      //   <img src={require(`../../public/${this.state.img}`)} className="tile" onClick={()=> window.location.replace(this.state.url)} alt="loading..." />
+      // </section>
     );
   }
 }
 
 AppPage.propTypes = {
   // actions: PropTypes.object.isRequired,
-  app: PropTypes.object.isRequired
+  // app: PropTypes.object.isRequired
   // name: PropTypes.String.isRequired,
   // author: PropTypes.object.isRequired,
   // type: PropTypes.String.isRequired,

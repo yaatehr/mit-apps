@@ -5,8 +5,8 @@ $vin-red: #ff0000;
 
 /* Styles */
 body {
-  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  line-height: 1.4em;
+  font: 14px "Roboto",UILanguageFont,Arial,sans-serif;
+
   color: #4d4d4d;
   min-width: 230px;
   max-width: 550px;
@@ -25,6 +25,7 @@ h2 {
 	color: $vin-blue;
 }
 
+
 .savings { color: $vin-green; }
 .loss { color: $vin-red; }
 input.small { width: 46px; }
@@ -35,28 +36,53 @@ td.fuel-savings-label { width: 175px; }
   align-items: center;
 }
 
-.NavLink {
-    
+.app-page {
+  width: 70vw;
+  background-color: #eeeeee;
+  font-family: "Roboto",UILanguageFont,Arial,sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.4;
+
+    .header {
+
+    }
+    .author {
+
+    }
+
+    .icon {
+      width: 15px;
+      height: 15px;
+    }
+}
+
+.navLink {
+  font-family: "Roboto",UILanguageFont,Arial,sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.4;
+    color: white;
 }
 
 .navbar-inverse {
   height: 50px;
   width: 100vw;
+  
   position: absolute;
   right: 0;
-  display: inline-block;
-  padding: 10px;
+  display: block;
   padding-top: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
-  padding-left: 10px;
+  padding-left: 50px;
   margin-bottom: 0px;
   border-bottom-width: 10px;
 }
 .navbar-inverse-hidden {
   height: 50px;
   width: 100vw;
-  display: inline-block hidden;
+  display: block hidden;
   padding: 10px;
   padding-top: 10px;
   padding-right: 10px;
