@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
 import App from './App';
-import AppPage from './containers/AppPage'
+import AppPage from './containers/AppPage';
 
 export default class Root extends Component {
   render() {
     const { store, history } = this.props;
-    console.log(this.props)
-    console.log(store)
+    console.log(this.props);
+    console.log(store);
     const testApp= {
       author: "MIT",
       type: "App",
@@ -19,7 +19,7 @@ export default class Root extends Component {
       rating: 4,
       tags: ["school", "management", "software", "this sucks"],
       reviews: []
-    }
+    };
 
 
     return (

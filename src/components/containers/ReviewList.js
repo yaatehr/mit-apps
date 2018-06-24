@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as helperFuncs from '../../actions/AppPageActions'; // TODO
 import { Media } from 'react-bootstrap';
-import Rating from 'react-rating'
+import Rating from 'react-rating';
 
 
 const testReview= {
@@ -11,7 +11,7 @@ const testReview= {
   img: 'stellar.png',
   rating: 4,
   tags: ["school", "management", "software", "awesome"],
-}
+};
 
 
 class Review extends React.Component {
@@ -23,7 +23,7 @@ class Review extends React.Component {
       img: props.img,
       rating: props.rating,
       tags: props.tags
-    }
+    };
   }
   render() {
     return (
@@ -46,7 +46,7 @@ Review.propTypes = {
   img: PropTypes.string,
   rating: PropTypes.number,
   tags: PropTypes.arrayOf(PropTypes.string)
-}
+};
 
 export class ReviewList extends React.Component {
   constructor(props, context) {

@@ -13,12 +13,12 @@ const User = new GraphQLObjectType({
     fields: () => {
         return {
 
-            id: {
-                type: new GraphQLInt,
-                resolve(user) {
-                    return user.id
-                }
-            },
+            // id: {
+            //     type: new GraphQLInt,
+            //     resolve(user) {
+            //         return user.id;
+            //     }
+            // },
 
             firstName: {
                 type: new GraphQLString,
@@ -45,21 +45,21 @@ const User = new GraphQLObjectType({
                 }
             },
 
-            appHashes: {
-                type: new GraphQLList(GraphQLID),
-                resolve(user) {
-                    return user.appHashes;
-                }
-            },
-            reviewHashes: {
-                type: new GraphQLList(GraphQLID),
-                resolve(user) {
-                    return user.reviewHashes;
-                }
-            },
-        }
+            // appHashes: {
+            //     type: new GraphQLList(GraphQLID),
+            //     resolve(user) {
+            //         return user.appHashes;
+            //     }
+            // },
+            // reviewHashes: {
+            //     type: new GraphQLList(GraphQLID),
+            //     resolve(user) {
+            //         return user.reviewHashes;
+            //     }
+            // },
+        };
     }
-})
+});
 
 
 const Review = new GraphQLObjectType({ 
@@ -68,12 +68,12 @@ const Review = new GraphQLObjectType({
     fields: () => {
         return {
 
-            id: {
-                type: new GraphQLInt,
-                resolve(review) {
-                    return review.id
-                }
-            },
+            // id: {
+            //     type: new GraphQLInt,
+            //     resolve(review) {
+            //         return review.id;
+            //     }
+            // },
 
             title: {
                 type: new GraphQLString,
@@ -116,9 +116,9 @@ const Review = new GraphQLObjectType({
                     return review.userHash;
                 }
             }
-        }
+        };
     }
-})
+});
 
 const App = new GraphQLObjectType({ 
     name: 'App',
@@ -126,12 +126,12 @@ const App = new GraphQLObjectType({
     fields: () => {
         return {
 
-            id: {
-                type: new GraphQLInt,
-                resolve(app) {
-                    return app.id
-                }
-            },
+            // id: {
+            //     type: new GraphQLInt,
+            //     resolve(app) {
+            //         return app.id;
+            //     }
+            // },
 
             firstName: {
                 type: new GraphQLString,
@@ -167,9 +167,9 @@ const App = new GraphQLObjectType({
                     return app.reviewHashes;
                 }
             },
-        }
+        };
     }
-})
+});
 
 
 const Query = new GraphQLObjectType({
@@ -188,12 +188,12 @@ const Query = new GraphQLObjectType({
                     }
                 }
             }
-        }
+        };
     }
 });
 
 const Schema = new GraphQLSchema({
     query: Query
-})
+});
 
 export default Schema;

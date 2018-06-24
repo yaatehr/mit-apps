@@ -15,7 +15,7 @@ const testState = {
         0: "0",
     },
     lastUpdated: "default"
-}
+};
 
 //TODO make real state
 //TODO fill out all crud endpoints (delete, add?)
@@ -29,23 +29,23 @@ export default function appStoreReducer(state = testState, action) {
 
     switch(type) {
         case ActionTypes.CLEAR_APPS:
-        console.log(payload)
+        console.log(payload);
         return {
             ...state,
             apps: payload.apps,
             lastUpdated: currentTime
-        }
+        };
         case ActionTypes.LOAD_APPS:
         return {
             ...state,
             apps: {},
             lastUpdated: currentTime
-        }
+        };
         case ActionTypes.FILTER_APPS: 
             return {
                 apps: helperFuncs.filter(state.apps, payload.predicate),
                 lastUpdated: currentTime
-            }
+            };
         
         default:
             return state;

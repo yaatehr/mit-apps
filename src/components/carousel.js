@@ -3,7 +3,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import * as helperFuncs from '../actions/AppPageActions'
+import * as helperFuncs from '../actions/AppPageActions';
 
 // import AppTile from '../AppPage/AppTile.js';
 // import { connect, Provider, bindActionCreators } from 'react-redux';
@@ -88,6 +88,7 @@ class Carousel extends React.Component {
     if (!this.state.tiles) {
       return (
         <div>
+          <h3> carousel: </h3>
           <h2>Browse Student Apps</h2>
           <Slider {...settings}>
             <div className="tile-preview">Loading...</div>

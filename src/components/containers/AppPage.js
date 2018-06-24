@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // import {bindActionCreators} from 'redux';
 import * as helperFuncs from '../../actions/AppPageActions'; // TODO
 import { Media } from 'react-bootstrap';
-import Rating from 'react-rating'
+import Rating from 'react-rating';
 import { ReviewList } from './ReviewList';
 
 // import { connect } from 'react-redux'
@@ -19,7 +19,7 @@ const testApp= {
   rating: 4,
   tags: ["school", "management", "software", "this sucks"],
   reviews: []
-}
+};
 
 export class AppPage extends React.Component {
   constructor(props, context) {
@@ -52,7 +52,7 @@ export class AppPage extends React.Component {
   }
 
   componentWillMount() {
-    this.setState({app: testApp})
+    this.setState({app: testApp});
   }
 
 
@@ -61,6 +61,7 @@ export class AppPage extends React.Component {
     // helperFuncs.toAppUrl("http://www.google.com")
     return (
       <section className="app-page">
+      <h3>App Page:</h3>
       <Media>
       <Media.Left>
        <img src={require(`../../public/${this.state.img}`)} className="tile" onClick={()=> window.location.replace(this.state.url)} alt="loading..." />
@@ -77,6 +78,7 @@ export class AppPage extends React.Component {
 />
       </Media.Body>
       <Media.List>
+      <h3>Review List Component:</h3>
         <ReviewList/>
         </Media.List>
     </Media>

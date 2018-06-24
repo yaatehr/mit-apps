@@ -2,12 +2,12 @@ import Sequelize from 'sequelize';
 import Faker from 'faker';
 
 const Conn = new Sequelize(
-    'AppStoreDB',
-    'UATECH',
-    'UATECH',
+    'yaatehr+UATech',
+    'yaatehr',
+    'sod54miy',
     {
         dialect: 'mysql',
-        host: 'localhost'
+        host: 'sql.mit.edu'
     }
 );
 
@@ -26,20 +26,24 @@ const App = Conn.define('app', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    reviews: {
-        type: Sequelize.ARRAY(Sequelize.JSONB),
-        allowNull: true
-    },
     email: {
         type: Sequelize.STRING,
+        allowNull: true,
         validate: {
             isEmail: true
         }
     },
     appHash: {
-        type: Sequelize.STRING,
+        type: Sequelize.UUID,
+        primaryKey: true,
+        unique: true,
         allowNull: false
     },
+}, {
+    name: {
+        singular: 'app',
+        plural: 'apps',
+      }// for relationships
 });
 
 
@@ -61,14 +65,21 @@ const Review = Conn.define('review', {
         allowNull: false
     },
     reviewHash: {
-        type: Sequelize.STRING,
+        type: Sequelize.UUID,
+        primaryKey: true,
+        unique: true,
         allowNull: false
     },
-    userHash: {
-        type: Sequelize.STRING,
-        allowNull: false
-    }
-});
+    // userHash: {
+    //     type: Sequelize.UUID,
+    //     allowNull: false
+    // }
+},  {
+    name: {
+        singular: 'review',
+        plural: 'reviews',
+      }
+} );
 
 const User = Conn.define('user', {
     firstName: {
@@ -84,27 +95,59 @@ const User = Conn.define('user', {
         allowNull: false
     },
     userHash: {
-        type: Sequelize.STRING,
+        type: Sequelize.UUID,
+        primaryKey: true,
+        unique: true,
         allowNull: false
     },
 
-    appHashes: {
-        type: Sequelize.ARRAY({ type: Sequelize.STRING })
-    },
-    reviewHashes: {
-        type: Sequelize.ARRAY({ type: Sequelize.STRING })
-    }
+    // appHashes: {
+    //     type: Sequelize.ARRAY({ type: Sequelize.UUID })
+    // },
+    // reviewHashes: {
+    //     type: Sequelize.ARRAY({ type: Sequelize.UUID })
+    // }
 
+}, {
+    name: {
+        singular: 'user',
+        plural: 'users',
+      }
 });
 
 // RELATIONSHIPS TODO: Mock out relationships between DB Schema and recreate this structure.
 //Note: incomplete
-User.hasMany(Review, {foreignKey: 'reviewHash', targetKey: 'userHash'});
-User.hasMany(App, {targetKey: 'appHash'} );
-App.belongsToMany(User)
+
+// For a N:M relationship, do this:
+
+// Parent.belongsToMany( Child, {
+//     as: [Relationship],
+//     through: [Parent_Child] //this can be string or a model,
+//     foreignKey: 'Parent_rowId'
+// });
+
+// Child.belongsToMany(Parent, {
+//     as: [Relationship2],
+//     through: [Parent_Child],
+//     foreignKey: 'Child_rowId'
+// });
+
+User.hasMany(Review);
+Review.belongsTo(User);
+User.hasMany(App);
+App.belongsTo(User);
 App.hasMany(Review);
+Review.belongsTo(App);
 
 
+Conn
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
 
 //add a bunch of phony entitiies to the database
 Conn.sync({ force: true }).then(() => {
@@ -127,7 +170,7 @@ Conn.sync({ force: true }).then(() => {
                     rating: Faker.random.number(5),
                     authorName: Faker.name.firstName() + " " + Faker.name.lastName(),
                     reviewHash: Faker.random.uuid(),
-                    userHash: person.userHash
+                    // userHash: person.userHash
             });
         });
         });
@@ -154,13 +197,3 @@ Conn.sync({ force: true }).then(() => {
 });
 
 export default Conn;
-
-
-Conn
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
