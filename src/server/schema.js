@@ -3,6 +3,7 @@ import Database from './database';
 
 
 //graphQL Schema
+//TODO make an actual DB Schema and figure out the Relationship network for basic components (add teams if you're up to it)
 /**
  * these are known as Data Models or Data Transfer Objects
  * The resolve method is unpackaging value from the the sequlize object connected t the  

@@ -9,8 +9,8 @@ import './styles/styles.scss'; // Yep, that's right. You can import SASS/CSS fil
 require('./favicon.ico'); // Tell webpack to load favicon.ico
 // import Conn from '../tools/database';
 
-import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
+import client from './server/apollo';
 // import gql from "graphql-tag";
 
 
@@ -18,7 +18,6 @@ import { ApolloProvider } from "react-apollo";
 
 
 // // GRAPHQL Setup
-const client = new ApolloClient();
 // Conn.afterSync(() => {
 //   console.log('sequlize sync has run. Online');
 // })

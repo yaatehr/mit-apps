@@ -43,7 +43,8 @@ const App = Conn.define('app', {
     name: {
         singular: 'app',
         plural: 'apps',
-      }// for relationships
+      },// for relationships
+      
 });
 
 

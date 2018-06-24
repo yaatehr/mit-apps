@@ -9,6 +9,7 @@ import AppStorePage from './containers/AppStorePage';
 import AppPage from './containers/AppPage';
 import NotFoundPage from './NotFoundPage';
 import NavigationBar from './NavigationBar';
+import OnlineComponent from './onlineComponent.example';
 
 // import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from 'react';
 
@@ -32,6 +33,7 @@ class App extends React.Component {
           <Route path="/about" component={AboutPage} />
           <Route path="/app-store" component={AppStorePage} />
           <Route path="/app-page" component={AppPage} />
+          <Route path="/online-component" component={OnlineComponent} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>
