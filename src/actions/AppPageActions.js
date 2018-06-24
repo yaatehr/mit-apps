@@ -16,7 +16,7 @@ export function getById(reducerArray) {
 
 
 export function filter(obj, predicate) {
-    Object.keys(obj)
+    return Object.keys(obj)
         .filter(key => predicate(obj[key]))
         .reduce((res, key) => (res[key] = obj[key], res), {});
 }

@@ -8,6 +8,7 @@ export function getCurrencyFormattedNumber(value) {
   return '$' + getFormattedNumber(value); // eslint-disable-line prefer-template
 }
 
+//convert string to number
 export function getFormattedNumber(value) {
   if (value === 0) {
     return 0;

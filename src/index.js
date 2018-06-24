@@ -7,14 +7,24 @@ import configureStore, { history } from './store/configureStore';
 import Root from './components/Root';
 import './styles/styles.scss'; // Yep, that's right. You can import SASS/CSS files too! Webpack will run the associated loader and plug this into the page.
 require('./favicon.ico'); // Tell webpack to load favicon.ico
+// import Conn from '../tools/database';
 
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 // import gql from "graphql-tag";
 
 
-// GRAPHQL Setup
+//TODO Make tests for all Helper methods
+
+
+// // GRAPHQL Setup
 const client = new ApolloClient();
+// Conn.afterSync(() => {
+//   console.log('sequlize sync has run. Online');
+// })
+// Conn.sync();
+//TODO test Sequelize
+
 
 
 

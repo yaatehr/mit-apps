@@ -8,6 +8,8 @@ import AppPage from './containers/AppPage'
 export default class Root extends Component {
   render() {
     const { store, history } = this.props;
+    console.log(this.props)
+    console.log(store)
     const testApp= {
       author: "MIT",
       type: "App",

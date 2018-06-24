@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import * as helperFuncs from '../../actions/AppPageActions'; // TODO
 import { Media } from 'react-bootstrap';
 import Rating from 'react-rating'
+import { ReviewList } from './ReviewList';
 
 // import { connect } from 'react-redux'
 // TODO Add react redux to stack
@@ -54,6 +55,8 @@ export class AppPage extends React.Component {
     this.setState({app: testApp})
   }
 
+
+
   render() {
     // helperFuncs.toAppUrl("http://www.google.com")
     return (
@@ -73,6 +76,9 @@ export class AppPage extends React.Component {
   onChange={(value) => console.log(value)}
 />
       </Media.Body>
+      <Media.List>
+        <ReviewList/>
+        </Media.List>
     </Media>
 
     </section>

@@ -6,10 +6,9 @@ $vin-red: #ff0000;
 /* Styles */
 body {
   font: 14px "Roboto",UILanguageFont,Arial,sans-serif;
-
+  width: 100vw;
   color: #4d4d4d;
-  min-width: 230px;
-  max-width: 550px;
+
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
@@ -37,7 +36,6 @@ td.fuel-savings-label { width: 175px; }
 }
 
 .app-page {
-  width: 70vw;
   background-color: #eeeeee;
   font-family: "Roboto",UILanguageFont,Arial,sans-serif;
     font-size: 13px;
@@ -68,9 +66,6 @@ td.fuel-savings-label { width: 175px; }
 .navbar-inverse {
   height: 50px;
   width: 100vw;
-  
-  position: absolute;
-  right: 0;
   display: block;
   padding-top: 10px;
   padding-right: 10px;

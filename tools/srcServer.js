@@ -1,4 +1,4 @@
-// This file configures the development web server
+// This file clientConfigures the development web server
 // which supports hot reloading and synchronized testing.
 
 // Require Browsersync along with webpack and middleware for it
@@ -9,9 +9,9 @@ import historyApiFallback from 'connect-history-api-fallback';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
-import config from '../webpack.config.dev';
+import {clientConfig} from '../webpack.config.dev';
 
-const bundler = webpack(config);
+const bundler = webpack(clientConfig);
 
 // Run Browsersync and use middleware for Hot Module Replacement
 browserSync({
@@ -26,8 +26,8 @@ browserSync({
       historyApiFallback(),
 
       webpackDevMiddleware(bundler, {
-        // Dev middleware can't access config, so we provide publicPath
-        publicPath: config.output.publicPath,
+        // Dev middleware can't access clientConfig, so we provide publicPath
+        publicPath: clientConfig.output.publicPath,
 
         // These settings suppress noisy webpack output so only errors are displayed to the console.
         noInfo: true,
