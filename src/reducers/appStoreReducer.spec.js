@@ -19,6 +19,10 @@ const testState = () => {
     }
 }
 
+//TODO make a workaround test for the date
+//TODO test all paths
+
+
 describe('Reducers::AppStoreReducer', () => {
     const getInitialState = () => {
         return {

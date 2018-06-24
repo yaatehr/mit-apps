@@ -1,6 +1,7 @@
 import Express from 'express';
 import GraphHTTP from 'express-graphql';
 import Schema from './schema';
+console.log('Server is running  ');
 
 const APP_PORT = 8080;
 
@@ -13,6 +14,6 @@ app.use(Express.static('dist'), '/graphql', GraphHTTP({
 }));
 
 app.listen(APP_PORT, () => {
-    console.log('DB Listening on port 8080 ');
+    console.error()('DB Listening on port 8080 ');
 });
 

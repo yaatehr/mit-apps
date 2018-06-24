@@ -36,6 +36,8 @@ const clientConfig = {
         removeComments: true,
         collapseWhitespace: true
       },
+      // favicon: "./src/public/",
+      //TODO get a favico
       inject: true
     })
   ],
