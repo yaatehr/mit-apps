@@ -166,7 +166,7 @@ Conn.sync({ force: true }).then(() => {
         }).then( app => {
             app.createReview( {
                     title: Faker.internet.color(),
-                    content: Faker.name.jobDescriptor(),
+                    content: Faker.random.words(100),
                     rating: Faker.random.number(5),
                     authorName: Faker.name.firstName() + " " + Faker.name.lastName(),
                     reviewHash: Faker.random.uuid(),

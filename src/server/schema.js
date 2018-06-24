@@ -1,4 +1,4 @@
-import { GraphQLInt, GraphQLObjectType, GraphQLString, GraphQLList, GraphQLID, GraphQLScalarType, GraphQLSchema} from 'graphql';
+import { GraphQLInt, GraphQLObjectType, GraphQLString, GraphQLList, GraphQLID, GraphQLScalarType, GraphQLSchema, GraphQLFloat} from 'graphql';
 import Database from './database';
 
 
@@ -21,25 +21,26 @@ const User = new GraphQLObjectType({
             // },
 
             firstName: {
-                type: new GraphQLString,
+                type: GraphQLString,
                 resolve(user) {
+                    console.log('resolving user first name');
                     return user.firstName;
                 }
             },
             lastName: {
-                type: new GraphQLString,
+                type: GraphQLString,
                 resolve(user) {
                     return user.lastName;
                 }
             },
             email: {
-                type: new GraphQLString,
+                type: GraphQLString,
                 resolve(user) {
                     return user.email;
                 }
             },
             userHash: {
-                type: new GraphQLID,
+                type: GraphQLID,
                 resolve(user) {
                     return user.userHash;
                 }
@@ -76,35 +77,35 @@ const Review = new GraphQLObjectType({
             // },
 
             title: {
-                type: new GraphQLString,
+                type: GraphQLString,
                 resolve(review) {
                     return review.title;
                 }
             },
 
             content: {
-                type: new GraphQLString,
+                type: GraphQLString,
                 resolve(review) {
                     return review.content;
                 }
             },
 
             authorName: {
-                type: new GraphQLString,
+                type: GraphQLString,
                 resolve(review) {
                     return review.authorName;
                 }
             },
 
             rating: {
-                type: new GraphQLScalarType,
+                type: GraphQLFloat,
                 resolve(review) {
                     return review.rating;
                 }
             },
 
             reviewHash: {
-                type: new GraphQLID,
+                type: GraphQLID,
                 resolve(review) {
                     return review.reviewHash;
                 }
@@ -133,29 +134,36 @@ const App = new GraphQLObjectType({
             //     }
             // },
 
-            firstName: {
-                type: new GraphQLString,
+            name: {
+                type: GraphQLString,
                 resolve(app) {
-                    return app.firstName;
+                    return app.name;
                 }
             },
 
-            lastName: {
-                type: new GraphQLString,
+            author: {
+                type: GraphQLString,
                 resolve(app) {
-                    return app.lastName;
+                    return app.author;
+                }
+            },
+
+            type: {
+                type: GraphQLString,
+                resolve(app) {
+                    return app.type;
                 }
             },
 
             email: {
-                type: new GraphQLString,
+                type: GraphQLString,
                 resolve(app) {
                     return app.email;
                 }
             },
 
             appHash: {
-                type: new GraphQLID,
+                type: GraphQLID,
                 resolve(app) {
                     return app.appHash;
                 }
@@ -177,8 +185,8 @@ const Query = new GraphQLObjectType({
     description: 'This is a root query',
     fields: () => {
         return {
-            entity: {
-                type: new GraphQLList(User) | new GraphQLList(App) | new GraphQLList(Review),
+            users: {
+                type: new GraphQLList(User),
                 args: {
                     id: {
                         type: GraphQLInt
@@ -186,6 +194,37 @@ const Query = new GraphQLObjectType({
                     keyword: {
                         type: GraphQLString
                     }
+                },
+                resolve(root, args) {
+                    return Database.models.user.findAll({where: args});
+                }
+            },
+            apps: {
+                type: new GraphQLList(App),
+                args: {
+                    id: {
+                        type: GraphQLInt
+                    },
+                    keyword: {
+                        type: GraphQLString
+                    }
+                },
+                resolve(root, args) {
+                    return Database.models.app.findAll({where: args});
+                }
+            },
+            reviews: {
+                type: new GraphQLList(Review),
+                args: {
+                    id: {
+                        type: GraphQLInt
+                    },
+                    keyword: {
+                        type: GraphQLString
+                    }
+                },
+                resolve(root, args) {
+                    return Database.models.review.findAll({where: args});
                 }
             }
         };
