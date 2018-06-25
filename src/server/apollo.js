@@ -21,7 +21,7 @@ const client = new ApolloClient({
     }),
     new HttpLink({
       uri: 'http://localhost:8080/graphql',
-      credentials: 'same-origin',
+      credentials: 'omit',
       fetch
     })
   ]),

@@ -4,6 +4,7 @@ import Express from 'express';
 import GraphHTTP from 'express-graphql';
 import Schema from './schema';
 import cors from 'cors';
+import bodyParser from 'body-parser';
 //TODO   bodyParser.json() for apollo?
 
 
@@ -12,15 +13,22 @@ console.log('Server is running  ');
 const APP_PORT = 8080;
 
 const app = Express();
+app.use(cors());
 
-app.use('/graphql', GraphHTTP({
+app.use('/graphql', bodyParser.json(), GraphHTTP({
     schema: Schema,
     pretty: true,
     // cacheControl: true,
     graphiql: true
 }));
 
-app.use(cors());
+
+// add cors
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
 
 
 app.listen(APP_PORT, () => {

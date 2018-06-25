@@ -9,11 +9,10 @@ import React from 'react';
  */
 
  const message = `
+ This example is querying the current model for users from the database.\n
+Our backend uses express, sequlize, graphql and apollo.\n
 
- This example is querying the current model for users from the database.
-Our backend uses express, sequlize, graphql and apollo.
-
- If you would like to learn more boaut the backend please contact Yaateh or Anurag.
+ If you would like to learn more about the backend please contact Yaateh or Anurag.\n 
  `;
 export class OnlineComponent extends React.Component {
     render() {
@@ -35,17 +34,20 @@ export class OnlineComponent extends React.Component {
               if (error) return <p>Error :(</p>;
         
               return (
-                  <div>
+                  <div className="page-template">
                       <h3>Online component example</h3>
-                      <p> 
-                      </p>
-                  {data.rates.map(({ firstName, lastName, email, userHash }) => (
-                <div key={userHash}>
+                      <text> 
+                        {message}
+                      </text>
+
+                      <br/>
+                  {data.users.map(({ firstName, lastName, email, userHash }) => (
+                <div key={userHash} className="online-user">
                   <p>{`Name: ${firstName}, ${lastName}`}</p>
                   <p>{`Email: ${email}`}</p>
                   <p>{`hashCode: ${userHash}`}</p>
                 </div>
-              ))};
+              ))}
               </div>
             );
             }}
