@@ -4,7 +4,7 @@
 
 
 
-This app was build using the React-Slingshot Start pack. Refer to it here: https://github.com/coryhouse/react-slingshot/
+This app was built using the React-Slingshot Start pack. Refer to it here: https://github.com/coryhouse/react-slingshot/
 
 
 ## UA Tech Documentation (Drive)
@@ -17,16 +17,16 @@ If you're bored, adventurous, or no tickets are open, search the project directo
 
 If you leave any loose ends or think of something to add, make sure you mark it in the codebase with a //TODO, and make an Issue for it in the repository (`issues > new issue > feature`)
 
-1. **One command to get started** - 
+1. **Commands to get started** - 
 `npm start` to start the frontend at http://localhost:3000
 `babel-node src/server`
 backend at http://localhost:8080/graphql
 
 > Note: in frontend development each time you hit save, changes hot reload and linting and automated tests run. Not yet set up on the backend // TODO
 
-3. **Libraries we're using** - [Popular and powerful libraries](#technologies) for  React.
+2. **Libraries we're using** - [Popular and powerful libraries](#technologies) for  React.
 
-4. **Production build (not yet configured** - `npm run build` 
+3. **Production build (not yet configured** - `npm run build` 
 
 # First Time Setup
 
