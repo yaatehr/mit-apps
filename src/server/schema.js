@@ -1,4 +1,4 @@
-import { GraphQLInt, GraphQLObjectType, GraphQLString, GraphQLList, GraphQLID, GraphQLScalarType, GraphQLSchema, GraphQLFloat} from 'graphql';
+import { GraphQLInt, GraphQLObjectType, GraphQLString, GraphQLList, GraphQLID, GraphQLSchema, GraphQLFloat} from 'graphql';
 import Database from './database';
 
 

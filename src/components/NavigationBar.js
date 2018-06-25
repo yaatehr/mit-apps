@@ -24,7 +24,7 @@ export class NavigationBar extends React.Component {
                             <NavLink className="navLink" to="/online-component" activeStyle={activeStyle}>Example Online Component</NavLink>
                     </div>
             </div>
-        )
+        );
     }
 }
 

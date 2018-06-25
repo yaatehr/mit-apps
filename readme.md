@@ -6,6 +6,12 @@
 
 This app was build using the React-Slingshot Start pack. Refer to it here: https://github.com/coryhouse/react-slingshot/
 
+
+## UA Tech Documentation (Drive)
+[Project Overview](https://docs.google.com/document/d/1kJfeBeUI7Y72LbAvIeLP_qGH9i5XkfwrC7KkWiDlR18/edit?usp=sharing)
+[Athena Basics/ Backend Overview](https://docs.google.com/document/d/11MmvCYgbHwHia4OiB-7J1JdDet1n_yRlhpLnKDRhfJQ/edit?usp=sharing)
+
+
 1. **One command to get started** - 
 `npm start` to start the frontend at http://localhost:3000
 `babel-node src/server`
@@ -27,7 +33,7 @@ backend at http://localhost:8080/graphql
 Install node (I'm on v 9.7, most version should work but install node 9 if you have problems)
 You can do this by going to their website or installing via brew (mac or linux)
 
-###Brew
+### Brew
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 `brew install node@9`
 `brew link node@9 -f`
@@ -39,7 +45,7 @@ next install yarn
 Add the Babel CLI (transpiles newer javascript -ES6- to older EMCA2015)
 
 
-###Windows Users
+### Windows Users
 **Install [Node 4.0.0 or greater](https://nodejs.org)**
 
     (5.0 or greater is recommended for optimal build performance)
@@ -134,8 +140,8 @@ Slingshot offers a rich development experience using the following technologies:
 | [PostCSS](https://github.com/postcss/postcss) | Transform styles with JS plugins. Used to autoprefix CSS |
 | [Editor Config](http://editorconfig.org) | Enforce consistent editor settings (spaces vs tabs, etc). | [IDE Plugins](http://editorconfig.org/#download) |
 | [npm Scripts](https://docs.npmjs.com/misc/scripts)| Glues all this together in a handy automated build. | [Pluralsight course](https://www.pluralsight.com/courses/npm-build-tool-introduction), [Why not Gulp?](https://medium.com/@housecor/why-i-left-gulp-and-grunt-for-npm-scripts-3d6853dd22b8#.vtaziro8n)  |
-
-The starter kit includes a working example app that puts all of the above to use.
+| [Apollo](https://www.apollographql.com/docs/react/)| React Graphql Queries | [Queries](https://www.apollographql.com/docs/react/essentials/queries.html),  Also see the Online Component Example in src/components/onlinecomoponent.example.js|
+| [GraphQL & Graphiql](https://graphql.org/learn/)| About Graphql (dynamic query endpoint framework) | [Graphiql USage](https://youtu.be/5RGEODLhjhY?t=2m16s)|
 
 ---
 

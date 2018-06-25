@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 const HomePage = () => {
   return (
     <div>
-      <h1>React Slingshot</h1>
+      <h1>UA App Store</h1>
 
-      <h2>Get Started</h2>
+      <h2>Getting started</h2>
       <ol>
-        <li>Review the <Link to="/fuel-savings">demo app</Link></li>
-        <li>Remove the demo and start coding: npm run remove-demo</li>
+        <li>Review the docomentation on <a href="https://github.com/yaatehr/mit-apps">Github</a> </li>
+        <li>Remember to git checkout master, git pull, git checkout - to update your repo</li>
+        <li>NOTE: please DO NOT COMMIT directly to master</li>
+        <li>Make your own branch to work in with git checkout -b myBranchName</li>
       </ol>
     </div>
   );
