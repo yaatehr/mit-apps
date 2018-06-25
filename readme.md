@@ -1,69 +1,66 @@
 <p align="center">
-  <img src="https://cloud.githubusercontent.com/assets/3129129/22811426/bb69dc06-ef0c-11e6-8092-a0bea9060b35.png"/>
+  <img src="./src/public/uatech.png"/>
 </p>
 
----
 
-[![Build status: Linux](https://img.shields.io/travis/coryhouse/react-slingshot.svg?style=flat-square)](https://travis-ci.org/coryhouse/react-slingshot)
-[![Build status: Windows](https://img.shields.io/appveyor/ci/coryhouse/react-slingshot/master.svg?style=flat-square)](https://ci.appveyor.com/project/coryhouse/react-slingshot/branch/master)
-[![Dependency Status](https://david-dm.org/coryhouse/react-slingshot.svg?style=flat-square)](https://david-dm.org/coryhouse/react-slingshot)
-[![Coverage Status](https://img.shields.io/coveralls/coryhouse/react-slingshot/master.svg?style=flat-square)](https://coveralls.io/github/coryhouse/react-slingshot?branch=master)
 
-A comprehensive starter kit for rapid application development using React.
+This app was build using the React-Slingshot Start pack. Refer to it here: https://github.com/coryhouse/react-slingshot/
 
-Why Slingshot?
+1. **One command to get started** - 
+`npm start` to start the frontend at http://localhost:3000
+`babel-node src/server`
+backend at http://localhost:8080/graphql
 
-1. **One command to get started** - Type `npm start` to start development in your default browser.
-2. **Rapid feedback** - Each time you hit save, changes hot reload and linting and automated tests run.
-3. **One command line to check** - All feedback is displayed on a single command line.
-4. **No more JavaScript fatigue** - Slingshot uses [the most popular and powerful libraries](#technologies) for working with React.
-5. **Working example app** - The included example app shows how this all works together.
-6. **Automated production build** - Type `npm run build` to do all this:
+> Note: in frontend development each time you hit save, changes hot reload and linting and automated tests run. Not yet set up on the backend // TODO
 
-[![React Slingshot Production Build](https://img.youtube.com/vi/qlfDLsX-J0U/0.jpg)](https://www.youtube.com/watch?v=qlfDLsX-J0U)
+3. **Libraries we're using** - [Popular and powerful libraries](#technologies) for  React.
 
-# Get Started
+4. **Production build (not yet configured** - `npm run build` 
 
-1. **Initial Machine Setup**
+# First Time Setup
 
-    First time running the starter kit? Then complete the [Initial Machine Setup](#initial-machine-setup).
 
-2. **Clone the project**
+0. **Set Up Development Environment**
+>Note: I reccomend using VS Code since I will probably be able to give you better help. I also can't guarantee all other plugins play nicely with other text editors. Use other editors at your own risk.
 
-    `git clone https://github.com/coryhouse/react-slingshot.git`.
 
-3. **Run the setup script**
+Install node (I'm on v 9.7, most version should work but install node 9 if you have problems)
+You can do this by going to their website or installing via brew (mac or linux)
 
-    `npm run setup`
+###Brew
+`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+`brew install node@9`
+`brew link node@9 -f`
 
-4. **Run the example app**
+next install yarn
 
-    `npm start -s`
+`brew install yarn`
 
-    This will run the automated build process, start up a webserver, and open the application in your default browser. When doing development with this kit, this command will continue watching all your files. Every time you hit save the code is rebuilt, linting runs, and tests run automatically. Note: The -s flag is optional. It enables silent mode which suppresses unnecessary messages during the build.
+Add the Babel CLI (transpiles newer javascript -ES6- to older EMCA2015)
 
-5. **Review the example app.**
 
-    This starter kit includes a working example app that calculates fuel savings. Note how all source code is placed under /src. Tests are placed alongside the file under test. The final built app is placed under /dist. These are the files you run in production.
-
-6. **Delete the example app files.**
-
-    Once you're comfortable with how the example app works, you can [delete those files and begin creating your own app](./docs/FAQ.md#i-just-want-an-empty-starter-kit).
-
-7. **Having issues?** See [Having Issues?](#having-issues-try-these-things-first).
-
-## Initial Machine Setup
-
-1. **Install [Node 4.0.0 or greater](https://nodejs.org)**
+###Windows Users
+**Install [Node 4.0.0 or greater](https://nodejs.org)**
 
     (5.0 or greater is recommended for optimal build performance)
     Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm).
 
-2. **Install [Git](https://git-scm.com/downloads)**.
+install yarn `npm install -g yarn`
 
-3. **[Disable safe write in your editor](https://webpack.js.org/guides/development/#adjusting-your-text-editor)** to assure hot reloading works properly.
 
-4. On a Mac? You're all set. If you're on Linux or Windows, complete the steps for your OS below.
+**Install Modules and Packages**
+install packages: `yarn` OR `npm install`
+install watchman (for file watching and live reloading): `brew install watchman`
+    or go here... https://facebook.github.io/watchman/
+    
+**Having issues?** See [Having Issues?](#having-issues-try-these-things-first).
+
+## Initial Machine Setup
+1. **Install [Git](https://git-scm.com/downloads)**.
+
+2. **[Disable safe write in your editor](https://webpack.js.org/guides/development/#adjusting-your-text-editor)** to assure hot reloading works properly. VSCode users Ignore this.
+
+3. On a Mac? You're all set. If you're on Linux or Windows, complete the steps for your OS below.
 
     ### On Linux
 
@@ -89,11 +86,8 @@ Why Slingshot?
 1. Make sure you ran all steps in [Get started](#get-started) including the [initial machine setup](#initial-machine-setup).
 2. Run `npm install` - If you forget to do this, you'll see this: `babel-node: command not found`.
 3. Install the latest version of Node. Or install [Node 5.12.0](https://nodejs.org/download/release/v5.12.0/) if you're having issues on Windows. Node 6 has issues on some Windows machines.
-4. Make sure files with names that begin with a dot (.editorconfig, .gitignore, .npmrc) are copied to the project directory root. This is easy to overlook if you copy this repository manually.
-5. Don't run the project from a symbolic link. It may cause issues with file watches.
-6. Delete any .eslintrc that you're storing in your user directory. Also, disable any ESLint plugin / custom rules that you've enabled within your editor. These will conflict with the ESLint rules defined in this project.
-7. Make sure you don't have NODE_ENV set to production on your machine. If you do then the [development dependencies won't be installed](https://github.com/coryhouse/react-slingshot/issues/400#issuecomment-290497767). Here's [how to check](http://stackoverflow.com/a/27939821/26180).
-8. Install watchman with `brew install watchman` if you are having the following error after an initial `npm start -s`:
+4. Make sure you don't have NODE_ENV set to production on your machine. If you do then the [development dependencies won't be installed](https://github.com/coryhouse/react-slingshot/issues/400#issuecomment-290497767). Here's [how to check](http://stackoverflow.com/a/27939821/26180).
+5. Install watchman with `brew install watchman` if you are having the following error after an initial `npm start -s`:
 
     ```bash
     2017-09-05 00:44 node[68587] (FSEvents.framework) FSEventStreamStart: register_with_server: ERROR: f2d_register_rpc() => (null) (-22)
@@ -107,7 +101,7 @@ Why Slingshot?
         at FSEvent.FSWatcher._handle.onchange (fs.js:1406:11)
     ```
 
-9. Tip: Things to check if you get an `npm run lint` error or build error:
+6. Tip: Things to check if you get an `npm run lint` error or build error:
 
     * If ESW found an error or warning in your project (e.g. console statement or a missing semi-colon), the lint thread will exit with `Exit status 1`. To fix:
 
@@ -117,7 +111,7 @@ Why Slingshot?
       > Note: Adding `exit 0` will allow the npm scripts to ignore the status 1 and allow ESW to print all warnings and errors.
     * Ensure the `eslint`/`esw` globally installed version matches the version used in the project. This will ensure the `esw` keyword is resolved.
 
-10. Rebuild node-sass with `npm rebuild node-sass` if you are having and error like `Node Sass does not yet support your current environment on macOS XXX` after an initial `npm start -s`.
+7. Rebuild node-sass with `npm rebuild node-sass` if you are having and error like `Node Sass does not yet support your current environment on macOS XXX` after an initial `npm start -s`. if this doesn't work. Delete node_modules directory, package.lock, and yarn.lock files then run `yarn`
 
 ---
 
