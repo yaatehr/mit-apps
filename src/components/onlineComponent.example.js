@@ -36,9 +36,9 @@ export class OnlineComponent extends React.Component {
               return (
                   <div className="page-template">
                       <h3>Online component example</h3>
-                      <text> 
+                      <p> 
                         {message}
-                      </text>
+                      </p>
 
                       <br/>
                   {data.users.map(({ firstName, lastName, email, userHash }) => (

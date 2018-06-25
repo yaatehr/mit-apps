@@ -11,6 +11,11 @@ This app was build using the React-Slingshot Start pack. Refer to it here: https
 [Project Overview](https://docs.google.com/document/d/1kJfeBeUI7Y72LbAvIeLP_qGH9i5XkfwrC7KkWiDlR18/edit?usp=sharing)
 [Athena Basics/ Backend Overview](https://docs.google.com/document/d/11MmvCYgbHwHia4OiB-7J1JdDet1n_yRlhpLnKDRhfJQ/edit?usp=sharing)
 
+Look at the Issues tab for TODOs
+Comment on whatever ticket you want to take
+If you're bored, adventurous, or no tickets are open, search the project directory for TODO and see what you can find.
+
+If you leave any loose ends or think of something to add, make sure you mark it in the codebase with a //TODO, and make an Issue for it in the repository (`issues > new issue > feature`)
 
 1. **One command to get started** - 
 `npm start` to start the frontend at http://localhost:3000
@@ -141,7 +146,7 @@ Slingshot offers a rich development experience using the following technologies:
 | [Editor Config](http://editorconfig.org) | Enforce consistent editor settings (spaces vs tabs, etc). | [IDE Plugins](http://editorconfig.org/#download) |
 | [npm Scripts](https://docs.npmjs.com/misc/scripts)| Glues all this together in a handy automated build. | [Pluralsight course](https://www.pluralsight.com/courses/npm-build-tool-introduction), [Why not Gulp?](https://medium.com/@housecor/why-i-left-gulp-and-grunt-for-npm-scripts-3d6853dd22b8#.vtaziro8n)  |
 | [Apollo](https://www.apollographql.com/docs/react/)| React Graphql Queries | [Queries](https://www.apollographql.com/docs/react/essentials/queries.html),  Also see the Online Component Example in src/components/onlinecomoponent.example.js|
-| [GraphQL & Graphiql](https://graphql.org/learn/)| About Graphql (dynamic query endpoint framework) | [Graphiql USage](https://youtu.be/5RGEODLhjhY?t=2m16s)|
+| [GraphQL & Graphiql](https://graphql.org/learn/)| About Graphql (dynamic query endpoint framework) | [Graphiql Usage](https://youtu.be/5RGEODLhjhY?t=2m16s)|
 
 ---
 

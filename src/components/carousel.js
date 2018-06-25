@@ -118,27 +118,9 @@ class Carousel extends React.Component {
   }
 }
 
-// TODO figure out how to for looop the tags/ nest a component in another (probably just make a map state to props function)
-// var element  = <div><h2>Browse Student Apps</h2> </div>;
-// element += ;
-// element += this.state.tiles.map((tile) => appTile(tile));
-// element += </Slider>
-
-//     return (
-
-//         <script>
-//             ReactDom.render(element, document.getElementById('root'));
-
-//         </script>
-//         </Slider>
-
-//       </div>
-//     );
-//   }
-// }
-
 export default Carousel;
 
+//leave in (react-redux syntax)
 // export default connect(
 //     mapStateToProps,
 //     null
